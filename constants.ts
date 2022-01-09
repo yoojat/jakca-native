@@ -1,0 +1,9 @@
+export const LOG_IN = 'LogIn';
+export const CREATE_ACCOUNT = 'CreateAccount';
+export const WELCOME = 'Welcome';
+export const FEED = 'Feed';
+export const PROFILE = 'Profile';
+export const COMMENTS = 'Comments';
+export const LIKES = 'Likes';
+export const ME = 'Me';
+export const COFFEE_SHOP = 'CoffeeShop';
