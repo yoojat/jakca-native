@@ -9,4 +9,8 @@ export type RootStackParamList = {
   Comments: undefined;
   Likes: { coffeeShopId: number };
   Me: undefined;
+  SelectPhoto: undefined;
+  TakePhoto: undefined;
+  Tabs: undefined;
+  UploadForm: { file: string };
 };

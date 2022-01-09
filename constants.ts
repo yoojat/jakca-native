@@ -7,3 +7,6 @@ export const COMMENTS = 'Comments';
 export const LIKES = 'Likes';
 export const ME = 'Me';
 export const COFFEE_SHOP = 'CoffeeShop';
+export const TAKE_PHOTO = 'TakePhoto';
+export const TABS = 'Tabs';
+export const UPLOAD_FORM = 'UploadForm';
