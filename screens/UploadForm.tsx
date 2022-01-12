@@ -75,7 +75,7 @@ const HeaderRightText = styled.Text`
 type Props = NativeStackScreenProps<RootStackParamList, 'UploadForm'>;
 
 export default function UploadForm({ route, navigation }: Props) {
-  const [uploadPhotoMutation, { loading }] = useMutation<
+  const [uploadCoffeeShopMutation, { loading }] = useMutation<
     uploadCoffeeShop,
     uploadCoffeeShopVariables
   >(UPLOAD_COFFEESHOP_MUTATION, {
@@ -119,11 +119,11 @@ export default function UploadForm({ route, navigation }: Props) {
   }, [loading]);
   const onValid = ({ caption }: any) => {
     const file = new ReactNativeFile({
-      uri: route.params.file,
+      uri: route.params.photoInfoUri,
       name: `1.jpg`,
       type: 'image/jpeg',
     });
-    uploadPhotoMutation({
+    uploadCoffeeShopMutation({
       variables: {
         name: '테스트',
         longitude: 'longitude테스트',

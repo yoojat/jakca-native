@@ -48,6 +48,7 @@ export default function SelectPhoto({ navigation }: Props) {
   const [ok, setOk] = useState(false);
   const [photos, setPhotos] = useState<MediaLibrary.Asset[]>([]);
   const [chosenPhoto, setChosenPhoto] = useState('');
+  const [photoInfoUri, setPhotoInfoUri] = useState('');
 
   const getPhotos = async () => {
     const { assets: photos } = await MediaLibrary.getAssetsAsync();
@@ -73,11 +74,12 @@ export default function SelectPhoto({ navigation }: Props) {
 
   const HeaderRight = () => (
     <TouchableOpacity
-      onPress={() =>
+      onPress={() => {
         navigation.navigate('UploadForm', {
           file: chosenPhoto,
-        })
-      }
+          photoInfoUri,
+        });
+      }}
     >
       <HeaderRightText>Next</HeaderRightText>
     </TouchableOpacity>
@@ -91,15 +93,18 @@ export default function SelectPhoto({ navigation }: Props) {
     navigation.setOptions({
       headerRight: HeaderRight,
     });
-  }, [chosenPhoto]);
+  }, [chosenPhoto, photoInfoUri]);
 
   const numColumns = 4;
   const { width } = useWindowDimensions();
-  const choosePhoto = (uri: string) => {
-    setChosenPhoto(uri);
+
+  const choosePhoto = async (id: string) => {
+    const info = await MediaLibrary.getAssetInfoAsync(id);
+    setChosenPhoto(info.uri);
+    setPhotoInfoUri(info.localUri || '');
   };
   const renderItem = ({ item: photo }: any) => (
-    <ImageContainer onPress={() => choosePhoto(photo.uri)}>
+    <ImageContainer onPress={() => choosePhoto(photo.id)}>
       <Image
         source={{ uri: photo.uri }}
         style={{ width: width / numColumns, height: 100 }}

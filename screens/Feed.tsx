@@ -64,6 +64,7 @@ export default function Feed() {
           photos={coffeeShop.photos}
           isLiked={coffeeShop.isLiked}
           likes={coffeeShop.likes}
+          commentNumber={coffeeShop.commentNumber}
         />
       )
     );
@@ -92,7 +93,8 @@ export default function Feed() {
           showsVerticalScrollIndicator={false}
           data={data?.seeFeed}
           keyExtractor={(coffeeShop, index) =>
-            '' + (coffeeShop ? coffeeShop.id : index)
+            // '' + (coffeeShop ? coffeeShop.id : index)
+            '' + index
           }
           renderItem={renderCoffeeShop}
         />

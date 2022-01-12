@@ -10,3 +10,4 @@ export const COFFEE_SHOP = 'CoffeeShop';
 export const TAKE_PHOTO = 'TakePhoto';
 export const TABS = 'Tabs';
 export const UPLOAD_FORM = 'UploadForm';
+export const UPLOAD_TEMP_FILE_FORM = 'UploadTempFileForm';

@@ -12,5 +12,5 @@ export type RootStackParamList = {
   SelectPhoto: undefined;
   TakePhoto: undefined;
   Tabs: undefined;
-  UploadForm: { file: string };
+  UploadForm: { file: string; photoInfoUri: string };
 };

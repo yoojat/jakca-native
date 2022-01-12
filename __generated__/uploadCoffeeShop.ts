@@ -40,4 +40,5 @@ export interface uploadCoffeeShopVariables {
   longitude: string;
   address: string;
   caption: string;
+  files: (any | null)[];
 }
